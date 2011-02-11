@@ -56,9 +56,9 @@ return array(
 
                 'db'=>array(
                         'class'=>'CDbConnection',
-                        'connectionString'=>'',
-                        'username'=>'',
-                        'password'=>'',
+                        'connectionString'=>'yourConnectionStringHere',
+                        'username'=>'yourDB-user',
+                        'password'=>'yourDB-password',
                         'charset'=>'utf8',
                         'tablePrefix'=>'tbl_',
                 ),
