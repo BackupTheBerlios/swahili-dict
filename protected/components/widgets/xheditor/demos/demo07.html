@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>xhEditor demo7 : UBBå¯è§åç¼è¾</title>
+<link rel="stylesheet" href="common.css" type="text/css" media="screen" />
+<script type="text/javascript" src="../jquery/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="../xheditor-zh-cn.js"></script>
+<script type="text/javascript" src="../xheditor_plugins/ubb.js"></script>
+<script type="text/javascript">
+$(pageInit);
+function pageInit()
+{
+	$('#elm1').xheditor(true,{tools:'full',showBlocktag:false,beforeSetSource:ubb2html,beforeGetSource:html2ubb});
+}
+</script>
+</head>
+<body>
+<form method="post" action="test.php">
+	<h3>xhEditor demo7 : UBBå¯è§åç¼è¾</h3>
+	<textarea id="elm1" name="elm1" rows="12" cols="80" style="width: 80%">
+[b]ç²ä½æå­ Abc[/b]
+[u]ä¸åçº¿æå­ Abc[/u]
+[i]æä½æå­ Abc[/i]
+[s]å é¤çº¿ Abc[/s]
+[s][i][u][b]ç²ä½ä¸åæä½å é¤çº¿ Abc[/b][/u][/i][/s]
+[color=red]çº¢é¢è²[/color]
+[back=#cccccc]èæ¯ç°è²[/back]
+[size=3]æå­å¤§å°ä¸º 3[/size]
+[font=ä»¿å®]å­ä½ä¸ºä»¿å®[/font]
+[align=Center]åå®¹å±ä¸­[/align]
+[img]img/pirate9.gif[/img]
+[img=238,66]img/pirate9.gif[/img]
+[url]http://pirate9.com/[/url]
+[url=http://pirate9.com/]ç¬¬9æµ·ç[/url]
+[url=http://pirate9.com/][img]img/pirate9.gif[/img][/url]
+[email]yanis.wang@gmail.com[/email]
+[email=yanis.wang@gmail.com]Yanis.Wang[/email]
+X[sup]2[/sup]
+X[sub]2[/sub]
+[list][*]aaa[*]bbb[*]ccc[/list]
+[list=1][*]åè¡¨é¡¹ #1[*]åè¡¨é¡¹ #2[*]åè¡¨é¡¹ #3[list=a][*]åè¡¨é¡¹ #1[*]åè¡¨é¡¹ #2[*]åè¡¨é¡¹ #3[/list][*]åè¡¨é¡¹ #4[/list]
+[table=300,#f5f5f5][tr=#E8F3FD][td=2,1]&nbsp;[/td][/tr][tr][td]&nbsp;[/td][td]&nbsp;[/td][/tr][tr][td]&nbsp;[/td][td]&nbsp;[/td][/tr][/table]
+[quote]æä»¬æ¯ä¸èå¹´è½»çæµ·çè¹ï¼è½½çæ¢¦æ³ï¼æä»¬æ¿å°å¿«ä¹å¸¦å°å¤§æµ·çæ¯ä¸ä¸ªè§è½ã [/quote] 
+[code]åäº«æ¸¸æï¼åäº«å¿«ä¹[/code]
+
+[flash=400,300]test.swf[/flash]
+
+[media=400,300,1]test.avi[/media]
+	</textarea>
+	<br/><br />
+	<input type="submit" name="save" value="Submit" />
+	<input type="reset" name="reset" value="Reset" />
+</form>
+</body>
+</html>

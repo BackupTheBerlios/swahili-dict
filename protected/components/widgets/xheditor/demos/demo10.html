@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>xhEditor demo10 : showModalæ¥å£çiframeæä»¶ä¸ä¼ </title>
+<link rel="stylesheet" href="common.css" type="text/css" media="screen" />
+<script type="text/javascript" src="../jquery/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="../xheditor-zh-cn.js"></script>
+<script type="text/javascript">
+$(pageInit);
+function pageInit()
+{
+	$('#elm1').xheditor(true,{tools:'full',upLinkUrl:"!uploadgui.html"});
+}
+</script>
+</head>
+<body>
+<form method="post" action="test.php">
+	<h3>xhEditor demo10 : showModalæ¥å£çiframeæä»¶ä¸ä¼ </h3>
+	<textarea id="elm1" name="elm1" rows="12" cols="80" style="width: 80%">
+<p>æ¬é¡µé¢æ¼ç¤ºéè¿showModalæ¥å£æ¥è°ç¨iframeè°ç¨æå®çæä»¶ä¸ä¼ é¡µæ¥ä¸ä¼ åç®¡çæä»¶ï¼å¯ä»¥å®ç°é«å¯å®ä¹çæä»¶ä¸ä¼ åç®¡çï¼å½åç¤ºä¾é¡µé¢ä¸­ä»å¨â<strong>è¶é¾æ¥</strong>âæé®ä¸­å®ç°äºæ¼ç¤ºã</p>
+<p>æ­¤åè½å¯å¨ä»¥ä¸4ä¸ªæé®ä¸­éè¿åæ°è°ç¨æ¥å®ç°ï¼è¶é¾æ¥ãå¾çãå¨ç»åè§é¢ï¼æ¥å£åå«ä¸ºï¼upLinkUrlãupImgUrlãupFlashUrlåupMediaUrlï¼é»è®¤è¿å ä¸ªå½æ°ä¸ºç¼è¾å¨åç½®çajaxå¼æä»¶ä¸ä¼ ï¼æ³è¦å¨frameä¸­è°ç¨èªå®ä¹ä¸ä¼ ç®¡çé¡µé¢ï¼å¿éå¨åæ°å¼æåé¢æ·»å æå¹å·ï¼â!âï¼æ³¨æå¿éä¸ºåè§ç¬¦å·ãä¾å¦ï¼upLinkUrl:'!gui.html'</p>
+<p>ä¸ä¼ ç®¡çé¡µé¢å¯ä½¿ç¨æ¥å£ï¼callbackåunoadmeï¼callbackç¨æ¥è¿åä¸ä¼ æèéæ©çæä»¶é¾æ¥ï¼unloadmeç¨æ¥éèå½åçModalçªå£ï¼æ¨å¯ä»¥æ¥çuploadgui.htmlé¡µé¢æ¥äºè§£å·ä½çç®¡çé¡µé¢å¶ä½ç¤ºä¾</p>
+<p>éè¦è¯´æï¼ä¸ä¼ ç®¡çé¡µå¿éè¦ä¸ç¼è¾å¨æå¨é¡µå¨åä¸ä¸ªåä¸ï¼å¦ææ¯ä¸åå­åï¼è¯·å¨ç®¡çé¡µåç¼è¾å¨æå¨é¡µä»£ç ä¸­åå«è®¾ç½®ç¸åçdocument.domain</p>
+	</textarea>
+	<br/><br />
+	<input type="submit" name="save" value="Submit" />
+	<input type="reset" name="reset" value="Reset" />
+</form>
+</body>
+</html>

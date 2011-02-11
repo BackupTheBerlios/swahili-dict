@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>xhEditor demo8 : Ajaxæä»¶ä¸ä¼ </title>
+<link rel="stylesheet" href="common.css" type="text/css" media="screen" />
+<script type="text/javascript" src="../jquery/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="../xheditor-zh-cn.js"></script>
+<script type="text/javascript">
+$(pageInit);
+function pageInit()
+{
+	$('#elm1').xheditor(true,{tools:'full',upLinkUrl:"upload.php",upLinkExt:"zip,rar,txt",upImgUrl:"upload.php",upImgExt:"jpg,jpeg,gif,png",upFlashUrl:"upload.php",upFlashExt:"swf",upMediaUrl:"upload.php",upMediaExt:"avi"});
+}
+</script>
+</head>
+<body>
+<form method="post" action="test.php">
+	<h3>xhEditor demo8 : Ajaxæä»¶ä¸ä¼ </h3>
+	<textarea id="elm1" name="elm1" rows="12" cols="80" style="width: 80%">
+è¯·ç¡®ä¿å½åç®å½ä¸­çupload.phpæç¸åºçPHPæ§è¡æéï¼è¥æ¨ä½¿ç¨çæ¯å¶å®çæå¡å¨èæ¬è¯­è¨ï¼è¯·èªè¡å¯¹åå§ååæ°ä¸­çupLinkUrlãupImgUrlãupFlashUrlåupMediaUrlè¿è¡ä¿®æ¹ï¼å¹¶å¼åç¸åºæå¡å¨ä¸ä¼ æ¥æ¶ç¨åºã<br/>æ³¨ï¼upload.phpä»ä¸ºæ¼ç¤ºä»£ç ï¼è¥æ¨å¸æå¨èªå·±çé¡¹ç®ä¸­å®éä½¿ç¨ï¼è¯·èªè¡ä¿®æ¹ä»£ç æèéæ°å¼åï¼å¼åè¿ç¨ä¸­è¯·æ³¨æä¸ä¼ æä»¶çæ ¼å¼åå¤§å°éå¶ï¼æ³¨ææå¡å¨å®å¨é®é¢ã <br/><br/><strong>ä¸ä¼ æ¥æ¶ç¨åºå¼åè§èï¼<br/></strong>1,ä¸ä¼ æä»¶ååå­ä¸ºï¼upload<br/>2,è¿åç»æå¿éä¸ºjsonï¼å¹¶ä¸ç»æå¦ä¸ï¼{"err":"","msg":"200906030521128703.gif"}<br/>è¥ä¸ä¼ åºç°éè¯¯ï¼è¯·å°éè¯¯åå®¹ä¿å­å¨erråéä¸­ï¼è¥ä¸ä¼ æåï¼è¯·å°æå¡å¨ä¸çç»å¯¹æèç¸å¯¹å°åä¿å­å¨msgåéä¸­ã<br/>ç¼è¾å¨è¥åç°è¿åçerråéä¸ä¸ºç©ºï¼åå¼¹åºçªå£æ¾ç¤ºè¿åçéè¯¯åå®¹ã<br/><br/><br/><strong>ä¸ä¼ ç®¡çæ¹æ¡å»ºè®®ï¼</strong><br/>1,å¨ç¼è¾å¨åå§åæ¶å¨upload.phpåé¢è·ä¸ä¸ä¸ªæå¡å¨çæçç»å¯¹å¯ä¸çè·è¸ªå¼ï¼ä¾å¦ï¼upload.php?infoid=121312121<br/>2,å¨æå¡å¨æ¥æ¶ç¨åºä¸­ä»¥è¿ä¸ªè·è¸ªå¼ä¿å­å°æ°æ®åºä¸­ï¼åæ ·å¯ä»¥éå¶åä¸ªè·è¸ªå¼ä¸æ»ä¸ä¼ æä»¶æ°æèæ»æä»¶å¤§å°ï¼å¦åå°±æ¯ä¸ä¸ªå¯ä»¥ä¸ä¼ æ éä¸ªæä»¶çæ¼æ´äº<br/>3,æç»å½åè¡¨åæäº¤æ¶ï¼åæ ¹æ®ç¼è¾å¨æäº¤çHTMLåå®¹åæ°æ®åºä¸­ä¸ä¼ åå®¹è¿è¡æ¯è¾ï¼å é¤æææ²¡æä½¿ç¨çä¸ä¼ æä»¶<br/>4,å®æç±æå¡å¨èæ¬å é¤ä¸ä¼ æ°æ®åºä¸­æ²¡æäº¤çæä»¶è®°å½ï¼è¿æ ·å°±è½é²æ­¢å«äººå°æ¨çç½ç«ä½ä¸ºåè´¹ç¸åç©ºé´äº<br/>
+	</textarea>
+	<br/><br />
+	<input type="submit" name="save" value="Submit" />
+	<input type="reset" name="reset" value="Reset" />
+</form>
+</body>
+</html>

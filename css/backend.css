@@ -1,0 +1,74 @@
+/* 
+The CSS, XHTML and design is released under GPL:
+http://www.opensource.org/licenses/gpl-license.php
+*/
+
+/* Farben:
+gruen = #8fbc8f (darkseagreen) z.B. Titelbalken
+gruen heller = #bbd5bb
+gruen dunkler = #699b69
+
+*/
+
+
+
+/********************************/
+/* Override: main.css    */
+/********************************/
+
+h1, h2, h3, h4, h5, .portlet-title {
+    color: #699b69;
+}
+
+#header {
+    background-color: darkseagreen;
+    border-bottom: 1px solid #aaa;
+}
+
+#fixed {
+   margin: 0;
+   width: 100%;   /* in case it should be fixed width layout */
+}
+
+#content {
+    padding: 0 10px;
+}
+
+/********************************/
+/* Override: nav.css    */
+/********************************/
+#nav a:hover {
+ color: #de4e4e;
+}
+
+#nav li.active a, #nav li.active span {
+     color: #de4e4e;
+}
+
+ #nav li li a:hover {
+     color: #de4e4e;
+ }
+
+ #nav li li.active a, #nav li li.active span {
+     color: #de4e4e;
+ }
+
+
+/********************************/
+/* Override: customGridView.css */
+/********************************/
+.grid-view table.items th
+{
+	background: #699b69;
+}
+
+
+/********************************/
+/* Override: customPager.css    */
+/********************************/
+ul.yiiPager .selected a
+{
+	background:#699b69;
+}
+
+

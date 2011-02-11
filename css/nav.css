@@ -1,0 +1,124 @@
+/* 
+    Document   : nav
+    Created on : May 25, 2010, 9:58:09 AM
+    Author     : elias
+    Description:
+        This dropdown menu is based on the "son of suckerfish" technique (http://htmldog.com/articles/suckerfish/dropdowns/). It needs a small portion of JavaScript (dropdowns.js) and works with old and new browsers
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+
+/*Main Navbar */
+#nav {
+ margin:0 auto;
+ background:transparent;
+ margin-bottom:1px;
+ }
+
+#nav, #nav ul {
+ list-style: none;
+ line-height: 0.7em;
+ }
+
+
+#nav a, #nav span {
+ display: block;
+ text-decoration: none;
+ border:none;
+ font-weight:normal;
+ color: #ddd;
+ }
+
+#nav a:hover {
+ color: chocolate;
+}
+
+/* fix onmouseout-event in IE7 */
+#nav li:hover, #nav li.sfhover {
+    position: static;
+}
+
+
+#nav a, #nav a:visited, #nav span {
+ display:block;
+ padding:4px 12px;
+ line-height: 1.1em;
+ }
+
+
+#nav li.active a, #nav li.active span {
+     color: #E17E37;
+}
+
+
+/* all list items */
+
+#nav li {
+ float: left;
+ list-style:none;
+ margin: 0 4px 0 0;
+ }
+
+#nav li, #nav li li {
+ line-height:100%;
+}
+
+
+
+
+/* second-level lists */
+#nav li ul {
+ z-index: 89; /* show dropdown before NextGEN-Images */
+ position: absolute;
+ left: -999em;
+ margin: 0 0 0 4px;
+ height: auto;
+ width: 174px;
+ border-bottom: 1px solid #a9a9a9;
+ }
+
+#nav li li {
+ width: 172px;
+ border-top: 1px solid #000;
+ border-right: 1px solid #000;
+ border-left: 1px solid #000;
+ background: #000;
+ }
+
+ #nav li li a, #nav li li a:visited {
+     color: #ddd;
+ }
+
+ #nav li li a:hover {
+     color: #E17E37;
+ }
+
+ #nav li li.active a, #nav li li.active span {
+     color: #E17E37;
+ }
+
+#nav li:hover ul, #nav li li:hover ul, #nav li li li:hover ul, #nav li.sfhover ul, #nav li li.sfhover ul, #nav li li li.sfhover ul {
+ left: auto;
+ }
+
+a.main:hover {
+ background:none;
+ }
+
+/* third-and-above-level lists */
+
+#nav li ul ul {
+	margin: -1em 0 0 10em;
+}
+
+#nav li:hover ul ul, #nav li:hover ul ul ul, #nav li.sfhover ul ul, #nav li.sfhover ul ul ul {
+	left: -999em;
+}
+
+#nav li:hover ul, #nav li li:hover ul, #nav li li li:hover ul, #nav li.sfhover ul, #nav li li.sfhover ul, #nav li li li.sfhover ul { /* lists nested under hovered list items */
+	left: auto;
+}

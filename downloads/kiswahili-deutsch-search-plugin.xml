@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+    Document   : kiswahili-deutsch-search-plugin.xml
+    Created on : 14. Juli 2010, 20:37
+    Author     : elias
+    Description: Provides a search plugin for modern browsers.
+-->
+
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+    <ShortName>kiswahili-deutsch</ShortName>
+    <Description>Browser Search Plugin - Kiswahili-Deutsch-Wörterbuch</Description>
+    <InputEncoding>ISO-8859-1</InputEncoding>
+    <Image height="16" width="16" type="image/x-icon">http://swahili.ndanda-projekt.info/images/favicon.ico</Image>
+    <Url type="text/html" method="GET" template="http://swahili.ndanda-projekt.info/index.php/wortschatz/search?state=none&amp;SearchForm[wortart]=&amp;SearchForm[kategorie]=&amp;SearchForm[searchq]={searchTerms}&amp;yt0=Suchen"></Url>
+    <moz:SearchForm>http://swahili.ndanda-projekt.info</moz:SearchForm>
+    <Url type="application/opensearchdescription+xml"
+     rel="self"
+     template="http://swahili.ndanda-projekt.info/downloads/kiswahili-deutsch-search-plugin.xml" />
+</OpenSearchDescription>
