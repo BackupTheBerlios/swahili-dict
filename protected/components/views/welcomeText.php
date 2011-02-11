@@ -1,8 +1,3 @@
-<h3>Suchhilfe</h3>
-    <p>Gesucht wird nach Wortteilen.
-    Beispiel: Der Suchbegriff "fuata" findet "-fuata" aber auch "-fuatana", "-fuatana na" etc. <?php echo CHtml::link('mehr ...', 'site/page/view/help'); ?></p>
-
-
 <h3>Mitmachen</h3>
     <p>Wenn Sie dieses Wörterbuch sinnvoll finden und gerne mithelfen möchten, es zu verbessern, sind Sie herzlich willkommen.
         Es gibt verschiedene Möglichkeiten der Mithilfe:</p>
