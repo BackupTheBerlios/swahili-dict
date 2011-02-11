@@ -1,0 +1,31 @@
+<?php
+return CMap::mergeArray(
+        require(dirname(__FILE__).'/main.php'),
+        array(
+        'modules'=>array(
+                'gii'=>array(
+                        'class'=>'system.gii.GiiModule',
+                        'password'=>'password',
+                ),
+        ),
+
+        'components'=>array(
+                'log'=>array(
+                        'class'=>'CLogRouter',
+                        'routes'=>array(
+                                array(
+                                        'class'=>'CWebLogRoute',
+                                        'levels'=>'trace,info,error,warning',
+                                ),
+                        ),
+                ),
+                'db'=>array(
+                        'class'=>'CDbConnection',
+                        'connectionString'=>'DevelopmentEnvironmentConnectionString',
+                        'username'=>'',
+                        'password'=>'',
+                        'charset'=>'utf8',
+                ),
+        ),
+        )
+);
