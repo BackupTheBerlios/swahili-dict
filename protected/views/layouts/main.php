@@ -14,7 +14,7 @@
         if (!empty($this->pageDescriptionMetaTag)) {
             Yii::app()->clientScript->registerMetaTag($this->pageDescriptionMetaTag, 'description');
         } else {
-            Yii::app()->clientScript->registerMetaTag('Online-Wörterbuch zum Mitmachen. Kiswahili-Deutsch-Übersetzungen suchen, verbessern, hinzufügen. Mit Grammatik-Wiki zum Nachschlagen und Verfassen von Grammatik-Artikeln.', 'description');
+            Yii::app()->clientScript->registerMetaTag('Online-Wörterbuch zum Mitmachen. Swahili-Deutsch-Übersetzungen suchen, verbessern, hinzufügen. Mit Grammatik-Wiki zum Nachschlagen und Verfassen von Artikeln zur Grammatik des Swahili (Kiswahili, Suaheli, Kisuaheli).', 'description');
         }
     ?>
     
