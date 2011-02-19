@@ -39,6 +39,16 @@ return array(
                                         'class'=>'CFileLogRoute',
                                         'levels'=>'error, warning',
                                 ),
+                        // Configures Yii to email all errors and warnings to an email address
+//                                array(
+//                                        'class' => 'CEmailLogRoute',
+//                                        'levels' => 'error, warning',
+//                                        'email' => 'e.vierneisel@tiscalinet.ch',
+//                                ),
+//				array(
+//					'class'=>'CWebLogRoute',
+//					'levels'=>'trace,info, error, warning',
+//				),
                         ),
                 ),
                 'user'=>array(
@@ -56,9 +66,9 @@ return array(
 
                 'db'=>array(
                         'class'=>'CDbConnection',
-                        'connectionString'=>'yourConnectionStringHere',
-                        'username'=>'yourDB-user',
-                        'password'=>'yourDB-password',
+                        'connectionString'=>'mysql:host=ndandap.mysql.db.internal;dbname=ndandap_dict',
+                        'username'=>'ndandap_dict',
+                        'password'=>'utawala!',
                         'charset'=>'utf8',
                         'tablePrefix'=>'tbl_',
                 ),
@@ -86,7 +96,7 @@ return array(
         // using Yii::app()->params['paramName']
         'params'=>array(
         // this is used in contact page
-                'adminEmail'=>'admin@adress.com',
-                'version'=>'currentVersion',
+                'adminEmail'=>'e.vierneisel@tiscalinet.ch',
+                'version'=>'0.7.1',
         ),
 );

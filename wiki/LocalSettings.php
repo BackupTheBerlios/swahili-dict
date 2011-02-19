@@ -33,7 +33,7 @@ if ( $wgCommandLineMode ) {
 # $wgDisableOutputCompression = true;
 
 $wgSitename         = "Kiswahili Wiki";
-$wgServer           = "http://www.domainname.com";
+$wgServer           = "http://www.kiswahili-deutsch.info";
 
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
@@ -55,19 +55,19 @@ $wgFavicon          = "$wgStylePath/common/images/favicon.ico";
 $wgEnableEmail      = true;
 $wgEnableUserEmail  = true; # UPO
 
-$wgEmergencyContact = "your@email.here";
-$wgPasswordSender = "your@email.here";
+$wgEmergencyContact = "e.vierneisel@tiscalinet.ch";
+$wgPasswordSender = "e.vierneisel@tiscalinet.ch";
 
 $wgEnotifUserTalk = true; # UPO
 $wgEnotifWatchlist = true; # UPO
 $wgEmailAuthentication = true;
 
 ## Database settings
-$wgDBtype           = "your_db-type";
-$wgDBserver         = "your_db-server";
-$wgDBname           = "your_db-name";
-$wgDBuser           = "your_db-user";
-$wgDBpassword       = "your_db-password";
+$wgDBtype           = "mysql";
+$wgDBserver         = "ndandap.mysql.db.internal";
+$wgDBname           = "ndandap_mwi188";
+$wgDBuser           = "ndandap_dict";
+$wgDBpassword       = "utawala!";
 
 # MySQL specific settings
 $wgDBprefix         = "wp_";
@@ -116,7 +116,7 @@ $wgSecretKey = "";
 
 ## Default skin: you can change the default skin. Use the internal symbolic
 ## names, ie 'vector', 'monobook':
-$wgDefaultSkin = 'vector';
+$wgDefaultSkin = 'swahilidict';
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
@@ -138,6 +138,9 @@ $wgExtraNamespaces[100] = "Admin";
 $wgCacheEpoch = max( $wgCacheEpoch, gmdate( 'YmdHis', @filemtime( __FILE__ ) ) );
 
 $wgExternalLinkTarget = '_blank';
+
+//$wgShowDebug = true;
+//$wgDebugComments = true;
 
 
 # -------------------------------------------------------------------

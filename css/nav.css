@@ -17,6 +17,7 @@
  margin:0 auto;
  background:transparent;
  margin-bottom:1px;
+ font-size: 0.75em;
  }
 
 #nav, #nav ul {
@@ -87,6 +88,7 @@
  border-right: 1px solid #000;
  border-left: 1px solid #000;
  background: #000;
+ text-align: left;
  }
 
  #nav li li a, #nav li li a:visited {

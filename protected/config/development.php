@@ -5,7 +5,7 @@ return CMap::mergeArray(
         'modules'=>array(
                 'gii'=>array(
                         'class'=>'system.gii.GiiModule',
-                        'password'=>'password',
+                        'password'=>'elias',
                 ),
         ),
 
@@ -21,9 +21,9 @@ return CMap::mergeArray(
                 ),
                 'db'=>array(
                         'class'=>'CDbConnection',
-                        'connectionString'=>'DevelopmentEnvironmentConnectionString',
-                        'username'=>'',
-                        'password'=>'',
+                        'connectionString'=>'mysql:host=localhost;dbname=ndandap_dict',
+                        'username'=>'elias',
+                        'password'=>'elias',
                         'charset'=>'utf8',
                 ),
         ),

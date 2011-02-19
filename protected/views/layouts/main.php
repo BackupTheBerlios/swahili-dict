@@ -71,7 +71,7 @@
                             array('label' => 'Spezialsuche', 'url' => array('/backend/adminDetailedSearch'), 'visible' => Yii::app()->user->checkAccess('admin')),
                             array('label' => 'Wortschatz exportieren', 'url' => array('/backend/exportLists'), 'visible' => !Yii::app()->user->isGuest),
                         )),
-                    array('url'=>'/wiki/', 'label'=>'Wiki', 'linkOptions'=>array('target'=>'_blank')),
+                    array('url'=>'/wiki/', 'label'=>'Wiki'),
                     array('label' => 'Hilfe', 'items' => array(
                         array('label' => 'Suchhilfe', 'url' => array('/site/page', 'view' => 'help')),
                         array('label' => 'Links', 'url' => array('/site/page', 'view' => 'resources')),
