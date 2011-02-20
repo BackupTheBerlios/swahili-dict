@@ -26,7 +26,7 @@ body {
 
 /* Content */
 #content {
-	margin-left: 10em;
+	margin-left: 11em;
 	padding: 1em;
 	background-image: url(images/border.png);
 	background-position: top left;
@@ -43,7 +43,7 @@ body {
 }
 #mw-head-base {
 	margin-top: -5em;
-	margin-left: 10em;
+	margin-left: 11em;
 	height: 8em;
 }
 #mw-head {
@@ -88,7 +88,7 @@ body {
 	/* Navigation Containers */
 	#left-navigation {
 		position: absolute;
-		left: 10em;
+		left: 11em;
 		top: 2.5em;
 	}
 	#right-navigation {
@@ -380,7 +380,8 @@ body {
 	}
 /* Panel */
 #mw-panel {
-	position: absolute;
+	clear: both;
+        position: absolute;
 	top: 160px;
 	padding-top: 1em;
 	width: 10em;

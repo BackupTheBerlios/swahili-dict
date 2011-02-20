@@ -55,8 +55,8 @@ $wgFavicon          = "$wgStylePath/common/images/favicon.ico";
 $wgEnableEmail      = true;
 $wgEnableUserEmail  = true; # UPO
 
-$wgEmergencyContact = "email@here";
-$wgPasswordSender = "email@here";
+$wgEmergencyContact = "e.vierneisel@tiscalinet.ch";
+$wgPasswordSender = "e.vierneisel@tiscalinet.ch";
 
 $wgEnotifUserTalk = true; # UPO
 $wgEnotifWatchlist = true; # UPO
@@ -64,10 +64,10 @@ $wgEmailAuthentication = true;
 
 ## Database settings
 $wgDBtype           = "mysql";
-$wgDBserver         = "serverhere";
-$wgDBname           = "dbnamehere";
-$wgDBuser           = "dbuserheret";
-$wgDBpassword       = "passwordhere";
+$wgDBserver         = "ndandap.mysql.db.internal";
+$wgDBname           = "ndandap_mwi188";
+$wgDBuser           = "ndandap_dict";
+$wgDBpassword       = "utawala!";
 
 # MySQL specific settings
 $wgDBprefix         = "wp_";
