@@ -1,6 +1,8 @@
 #Ignore the following files
 protected/config/*
-wiki/LocalSettings.php
+protected/runtime/*
+assets/*
+wiki/LocalSettings*.php
 
 nbproject/*
 nbproject/private/*

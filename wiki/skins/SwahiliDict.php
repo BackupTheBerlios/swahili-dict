@@ -1,6 +1,7 @@
 <?php
 /**
- * SwahiliDict - Derived from Vector skin
+ * Vector - Branch of MonoBook which has many usability improvements and
+ * somewhat cleaner code.
  *
  * @todo document
  * @file
@@ -17,7 +18,7 @@ if( !defined( 'MEDIAWIKI' ) )
 class SkinSwahiliDict extends SkinTemplate {
 
 	/* Functions */
-	var $skinname = 'swahiliDict', $stylename = 'vector',
+	var $skinname = 'swahilidict', $stylename = 'vector',
 		$template = 'SwahiliDictTemplate', $useHeadElement = true;
 
 	/**
@@ -30,23 +31,22 @@ class SkinSwahiliDict extends SkinTemplate {
 		parent::initPage( $out );
 
 		// Append skin-specific styles
-		$out->addStyle( 'swahiliDict/main-rtl.css', 'screen', '', 'rtl' );
-		$out->addStyle( 'swahiliDict/main-ltr.css', 'screen', '', 'ltr' );
-                $out->addStyle( '../../css/main.css', 'screen', '', 'ltr' );
-                $out->addStyle( '../../css/nav.css', 'screen', '', 'ltr' );
+		$out->addStyle( 'swahilidict/main-ltr.css', 'screen', '', 'ltr' );
+		$out->addStyle( 'swahilidict/head.css', 'screen', '', 'ltr' );
+                $out->addStyle( 'swahilidict/nav.css', 'screen', '', 'ltr' );
 		// Append CSS which includes IE only behavior fixes for hover support -
 		// this is better than including this in a CSS fille since it doesn't
 		// wait for the CSS file to load before fetching the HTC file.
 		$out->addScript(
 			'<!--[if lt IE 7]><style type="text/css">body{behavior:url("' .
 				$wgStylePath .
-				'/swahiliDict/csshover.htc")}</style><![endif]-->'
+				'/swahilidict/csshover.htc")}</style><![endif]-->'
 		);
 		// Add extra stylesheets
 		// THIS IS ONLY USEFUL FOR EXPERIMENTING WITH DIFFERNT STYLE OPTIONS! THIS WILL BE REMOVED IN THE NEAR FUTURE.
 		if ( is_array( $wgVectorExtraStyles ) ) {
 			foreach ( $wgVectorExtraStyles as $style ) {
-				$out->addStyle( 'swahiliDict/' . $style, 'screen' );
+				$out->addStyle( 'vector/' . $style, 'screen' );
 			}
 		}
 	}
@@ -449,48 +449,57 @@ class SwahiliDictTemplate extends QuickTemplate {
 		// Output HTML Page
 		$this->html( 'headelement' );
 ?>
+	<div id="fixed">
+                <!-- /overall header -->
+                <div id="header">
+                    <div id="head_title">
+                                <a href="/index.php/wortschatz/search"><img src="/images/logo_chocolate-hell.png" alt="W&ouml;rterbuch Kiswahili-Deutsch" /></a>
+                    </div>
+                    <div id="head_menu">
+                        <ul id="nav">
+                            <li><a href="/index.php/wortschatz/search">Wörterbuch durchsuchen</a></li>
+                            <li><a href="/index.php/site/page/view/grammar">Grammatik</a>
+                                <ul>
+                                    <li><a href="/index.php/site/page/view/classes">Übersicht Nominalklassen</a></li>
+                                    <li><a href="/index.php/site/page/view/verbs">Übersicht Verbformen</a></li>
+                                </ul>
+                            </li>
+                            <li><span>Mitmachen</span>
+                                <ul>
+                                    <li><a href="/index.php/backend/create">Begriff hinzufügen</a></li>
+                                    <li><a href="/index.php/site/contact">Mitteilung senden</a></li>
+                                </ul>
+                            </li>
+                            <li class="active"><a href="/wiki/">Wiki</a></li>
+                            <li><span>Hilfe</span>
+                                <ul>
+                                    <li><a href="/index.php/site/page/view/help">Suchhilfe</a></li>
+                                    <li><a href="/index.php/site/page/view/resources">Links</a></li>
+                                    <li><a href="/index.php/site/page/view/about">Über diese Seite</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/index.php/user/login">Login</a></li>
+                        </ul>
+                    </div><!-- head_menu -->
+                </div>
+                <!-- /header -->
 
-<!-- INSERT www.kiswahili-deutsch.info HEADER -->
+            	<!-- personal navigation -->
+                <?php $this->renderNavigation( 'PERSONAL' ); ?>
+		<!-- /personal navigation -->
+                
+                <div style="clear:both"></div>
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(<?php $this->text( 'logopath' ) ?>);" href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" <?php echo $this->skin->tooltipAndAccesskey( 'p-logo' ) ?>></a></div>
+				<!-- /logo -->
+				<?php $this->renderPortals( $this->data['sidebar'] ); ?>
+			</div>
+		<!-- /panel -->
+                <!-- page navigation -->
+                <div id="mw-head" class="noprint">
 
-<div id="fixed">
-<div id="header">
-        <div id="head_title">
-                            <a href="/index.php/wortschatz/search"><img alt="Wörterbuch Kiswahili-Deutsch" src="/images/logo_chocolate-hell.png"></a>                    </div>
-        <div id="head_menu">
-            <ul id="nav">
-<li><a href="/index.php/wortschatz/search">Wörterbuch durchsuchen</a></li>
-<li><a href="/index.php/site/page/view/grammar">Grammatik</a>
-<ul>
-<li><a href="/index.php/site/page/view/classes">Übersicht Nominalklassen</a></li>
-<li><a href="/index.php/site/page/view/verbs">Übersicht Verbformen</a></li>
-</ul>
-</li>
-<li><span>Mitmachen</span>
-<ul>
-<li><a href="/index.php/backend/create">Begriff hinzufügen</a></li>
-<li><a href="/index.php/site/contact">Mitteilung senden</a></li>
-</ul>
-</li>
-<li class="active"><a href="/wiki/">Wiki</a></li>
-<li><span>Hilfe</span>
-<ul>
-<li><a href="/index.php/site/page/view/help">Suchhilfe</a></li>
-<li><a href="/index.php/site/page/view/resources">Links</a></li>
-<li><a href="/index.php/site/page/view/about">Über diese Seite</a></li>
-</ul>
-</li>
-<li><a href="/index.php/user/login">Login</a></li>
-</ul>        </div><!-- head_menu -->
-
-    </div>
-    <div id="wikiarea">
-<!-- END www.kiswahili-deutsch.info HEADER -->
-
-		<div id="mw-page-base" class="noprint"></div>
-		<div id="mw-head-base" class="noprint"></div>
-                <!-- header -->
-		<div id="mw-head" class="noprint">
-			<?php $this->renderNavigation( 'PERSONAL' ); ?>
 			<div id="left-navigation">
 				<?php $this->renderNavigation( array( 'NAMESPACES', 'VARIANTS' ) ); ?>
 			</div>
@@ -498,8 +507,8 @@ class SwahiliDictTemplate extends QuickTemplate {
 				<?php $this->renderNavigation( array( 'VIEWS', 'ACTIONS', 'SEARCH' ) ); ?>
 			</div>
 		</div>
-		<!-- /header -->
-		<!-- content -->
+		<!-- page navigation -->
+                <!-- content -->
 		<div id="content" <?php $this->html('specialpageattributes') ?>>
 			<a id="top"></a>
 			<div id="mw-js-message" style="display:none;"<?php $this->html('userlangattributes') ?>></div>
@@ -555,16 +564,8 @@ class SwahiliDictTemplate extends QuickTemplate {
 			<!-- /bodyContent -->
 		</div>
 		<!-- /content -->
-		<!-- panel -->
-			<div id="mw-panel" class="noprint">
-				<!-- logo -->
-					<div id="p-logo" style="display:none;"><a style="background-image: url(<?php $this->text( 'logopath' ) ?>);" href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" <?php echo $this->skin->tooltipAndAccesskey( 'p-logo' ) ?>></a></div>
-				<!-- /logo -->
-				<?php $this->renderPortals( $this->data['sidebar'] ); ?>
-			</div>
-		<!-- /panel -->
 		<!-- footer -->
-		<div id="mw-footer"<?php $this->html('userlangattributes') ?>>
+		<div id="footer"<?php $this->html('userlangattributes') ?>>
 			<?php foreach( $validFooterLinks as $category => $links ): ?>
 				<?php if ( count( $links ) > 0 ): ?>
 				<ul id="footer-<?php echo $category ?>">
@@ -595,9 +596,8 @@ class SwahiliDictTemplate extends QuickTemplate {
 		<?php if ( $this->data['debug'] ): ?>
 		<!-- Debug output: <?php $this->text( 'debug' ); ?> -->
 		<?php endif; ?>
-    </div>
-  </div>
-</body>
+	</div> <!-- /fixed -->
+	</body>
 </html>
 <?php
 	}

@@ -22,35 +22,25 @@ body {
 	padding: 0;
 	font-family: sans-serif;
 	font-size: 1em;
+        text-align: center;
 }
-
 /* Content */
 #content {
-	margin-left: 11em;
-	padding: 1em;
+	padding: 1em 0 1em 1em;
 	background-image: url(images/border.png);
-	background-position: top left;
+	background-position: left;
 	background-repeat: repeat-y;
 	background-color: white;
+        margin-left: 160px;
 }
 /* Head */
-#mw-page-base {
-	height: 5em;
-	background-color: white;
-	background-image: url(images/page-fade.png);
-	background-position: bottom left;
-	background-repeat: repeat-x;
-}
-#mw-head-base {
-	margin-top: -5em;
-	margin-left: 11em;
-	height: 8em;
-}
 #mw-head {
-	position: relative;
-	top: 0;
-	right: 0;
-	width: 100%;
+	background-image: url(images/border.png);
+	background-position: left;
+	background-repeat: repeat-y;
+	background-color: white;
+        margin-left: 160px;
+        height: 40px;
 }
 #mw-head h5 {
 	margin: 0;
@@ -62,11 +52,14 @@ body {
 	}
 	/* Personal */
 	#p-personal {
-		position: absolute;
-		top: 0;
-		margin-left: 10em;
-		right: 0.75em;
+                height: 26px;
+                font-size: 0.9em;
+                margin-bottom: 18px;
+                text-align: right;
 	}
+        #p-personal a {
+            color: gray !important;
+        }
 	#p-personal h5 {
 		display: none;
 	}
@@ -78,7 +71,7 @@ body {
 	/* @noflip */
 	#p-personal li {
 		line-height: 1.125em;
-		float: left;
+		display: inline;
 	}
 	#p-personal li {
 		margin-left: 0.75em;
@@ -87,13 +80,10 @@ body {
 	}
 	/* Navigation Containers */
 	#left-navigation {
-		position: absolute;
-		left: 11em;
-		top: 2.5em;
+                float: left;
 	}
 	#right-navigation {
 		float: right;
-		margin-top: 2.5em;
 	}
 	/* Navigation Labels */
 	div.vectorTabs h5,
@@ -329,7 +319,7 @@ body {
 		margin-top: 0.4em;
 	}
 	#simpleSearch {
-		margin-top: 0.5em;
+		margin-top: 1em;
 		position: relative;
 		border: solid 1px #AAAAAA;
 		background-color: white;
@@ -380,11 +370,8 @@ body {
 	}
 /* Panel */
 #mw-panel {
-	clear: both;
-        position: absolute;
-	top: 160px;
-	padding-top: 1em;
-	width: 10em;
+	width: 150px;
+        float: left;
 }
 	#mw-panel div.portal {
 		padding-bottom: 1.5em;
@@ -429,22 +416,23 @@ body {
 		color: #0b0080;
 	}
 /* Footer */
-#mw-footer {
-	margin-left: 10em;
+#footer {
+        clear: both;
+        margin-left: 10em;
 	margin-top: 0;
 	padding: 0.75em;
 	background-image: url(images/border.png);
 	background-position: top left;
 	background-repeat: repeat-x;
 }
-#mw-footer ul {
+#footer ul {
 	list-style: none;
 	list-style-image: none;
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
-#mw-footer ul li {
+#footer ul li {
 	margin: 0;
 	padding: 0;
 	padding-top: 0.5em;
@@ -452,31 +440,29 @@ body {
 	color: #333333;
 	font-size: 0.7em;
 }
-#mw-footer #footer-icons {
+#footer #footer-icons {
 	float: right;
 }
 /* @noflip */
-body.ltr #mw-footer #footer-places {
+body.ltr #footer #footer-places {
 	float: left;
 }
-#mw-footer #footer-info li {
+#footer #footer-info li {
 	line-height: 1.4em;
 }
-#mw-footer #footer-icons li {
+#footer #footer-icons li {
 	float: left;
 	margin-left: 0.5em;
 	line-height: 2em;
 }
-#mw-footer #footer-places li {
+#footer #footer-places li {
 	float: left;
 	margin-right: 1em;
 	line-height: 2em;
 }
 /* Logo */
 #p-logo {
-	position: absolute;
-	top: -160px;
-	left: 0;
+        display: none;
 	width: 10em;
 	height: 160px;
 }
@@ -635,7 +621,7 @@ a.stub {
 a.new, #p-personal a.new {
 	color: #ba0000;
 }
-a.new:visited, #p-personal a.new:visited {
+a.new:visited {
 	color: #a55858;
 }
 
@@ -1066,8 +1052,8 @@ h3, h4, h5 {
 	font-size: 95%;
 }
 #bodyContent {
-	position: relative;
-	width: 100%;
+	float: right;
+	padding: 1em 0 1em 1em;
 }
 #mw-js-message {
 	font-size: 0.8em;
@@ -1120,3 +1106,28 @@ div.vectorTabs ul {
 	background-position:right bottom;
 	background-repeat:no-repeat;
 }
+
+/*********************************************************/
+/* Set whole page to fixed width (60.5 em) and center it */
+/* Credits:                                              */
+/* - http://userstyles.org/styles/30132                  */
+/* - http://www.maxdesign.com.au/articles/center/        */
+/*********************************************************/
+
+#fixed {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+  width: 1000px;
+  text-align: left;
+}
+
+/* head area and sidebar are not influenced by body-style
+   -> use the following lines to move them */
+
+#mw-head {
+  right: auto;
+  left: auto;
+  max-width: 1000px;
+}
+
