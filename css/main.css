@@ -1,533 +1,1 @@
-/* 
-The CSS, XHTML and design is released under GPL:
-http://www.opensource.org/licenses/gpl-license.php
-*/
-
-/* Farben:
-braun = #E17423 (chocolate etwas heller) z.B. Titelbalken
-helleres braun = #E17E37 (chocolate noch heller)
-dunkleres braun = chocolate (#D2691E)
-rot = firebrick (#B22222)
-
-*/
-
-
-/* --------------------------------------------------- */
-/* Overall page layout styles */
-/* --------------------------------------------------- */
-
-/* Headers */
-
-h1, .portlet-title { font-size: 166.67% }
-h2 { font-size: 133.33% }
-h3 { font-size: 116.67%; font-weight: bold }
-h4, h5, h6 { font-size: 100%; }
-
-h1, h2, h3, h4, h5, .portlet-title {
-    color: chocolate;
-    padding: 0.5em 0 0.1em 0;
-}
-
-body {
-    width:100%;
-    text-align:center;
-
-}
-
-#page {
-    width: 100%;
-}
-
-table, td, th {
-    padding: 2px;
-}
-
-#header {
-    padding: 0px;
-    background-color: #E17423;
-    margin-bottom: 10px;
-}
-#head_title {
-    /* background:  url("../images/logo.png") no-repeat 6px 2px #6A9ACD; */
-    text-align: left;
-    padding: 40px 16px 10px;
-    font-size: 160%;
-    color: #eee;
-    font-weight: normal;
-}
-#head_title a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: normal;
-}
-
-#head_menu {
-    background-color: #333;
-    padding: 0px 10px;
-    text-align: right;
-    line-height:100%;
-    height: 26px;
-}
-
-#content
-{
-    clear:both;
-}
-
-#footer
-{
-    clear: both;
-    float:left;
-    background-color: transparent;
-    font-size: 0.8em;
-    text-align: center;
-    border-top: 1px solid #416C99;
-    width:100%;
-    padding:0
-}
-
-#footer div {
-    padding: 10px;
-}
-
-#footer ul, #footer ul li {
-    display: inline;
-}
-
-/******************************/
-/* 1 Column Layout */
-/******************************/
-#one_col {
-    clear:both;
-    width:98%;
-    padding:6px 0;
-    background-color:#fff;
-    min-height: 300px;
-}
-
-/******************************/
-/* 2 Column Layout */
-/* taken and adopted from Matthew James Taylor */
-/* (http://matthewjamestaylor.com/blog/perfect-2-column-right-menu.htm) */
-/******************************/
-
-#fixed {
-   margin:0 auto; /* to be centered */
-   width: 1000px;   /* in case it should be fixed width layout */
-   text-align:left;
-}
-
-
-/* Header styles */
-#header {
-	clear:both;
-	float:left;
-	width:100%;
-}
-
-/* column container */
-.colmask {
-	position:relative;	/* This fixes the IE7 overflow hidden bug */
-	clear:both;
-	float:left;
-	width:100%;			/* width of whole page - see #fixed above */
-	overflow:hidden;		/* This chops off any overhanging divs */
-}
-/* common column settings */
-.colleft {
-	float:left;
-	width:100%;
-	position:relative;
-        min-height: 300px;
-}
-.col1,
-.col2 {
-	float:left;
-	position:relative;
-	padding:6px 0;
-	overflow:hidden;
-        min-height:300px;
-}
-/* 2 Column (right menu) settings */
-/* |                          1000px                        | */
-/* |           740px            |         260px             | */
-/* | 0px |     730px     | 10px | 10px |     250px    | 0px | */
-
-.colmask {
-	background:#fff;		/* right column background colour */
-}
-.colmask .colleft {
-	/* right:25%;			 right column width */
-        right:260px;			/* right column width */
-        background:#fff;		/* left column background colour */
-}
-.colmask .col1 {
-	/* width:71%;			left column content width (left column width minus left and right padding) */
-	/* left:27%;			(right column width) plus (left column left padding) */
-
-        width:730px;			/* left column content width (left column width minus left and right padding) */
-	left:260px;			/* (right column width) plus (left column left padding) */
-}
-.colmask .col2 {
-	/* width:21%;			 right column content width (right column width minus left and right padding) */
-	/* left:31%;			(right column width) plus (left column left and right padding) plus (right column left padding) */
-
-        width:250px;			/* right column content width (right column width minus left and right padding) */
-	left:280px;			/* (right column width) plus (left column left and right padding) plus (right column left padding) */
-}
-
-
-
-/* --------------------------------------------------- */
-/* The index page with search form */
-/* --------------------------------------------------- */
-
-#searchPage {
-    float: left;
-    width: 100%;
-}
-
-#searchBlock {
-    float: left;
-    margin:0 0 10px 0;
-    width: 100%;
-    color: #555;
-    background-color: #ddd;
-    padding: 10px;
-}
-
-#searchBlock input {
-    font-size: 120%;
-    width: 400px;
-    padding: 4px;
-    border: 1px solid #bbb;
-    color: #444;
-    font-weight: bold;
-}
-
-#searchBlock input.submit {
-    background-color: transparent;
-    border: none;
-    width: 70px;
-    margin-left: 6px;
-    cursor: pointer;
-    color: gray;
-}
-
-#searchBlock span.detaillink {
-    margin-left: 100px;
-}
-
-#searchBlock span.detaillink a {
-    color: #gray;
-    font-weight: normal;
-}
-#searchBlock span.detaillink a:hover, #searchBlock input.submit:hover {
-    color: #333;
-    text-decoration:none;
-}
-
-
-/* begin left sidebar search options */
-
-div.adv_row {
-    margin: 8px 0;
-}
-
-div.adv_row select {
-    width: 180px;
-    border: none;
-}
-
-
-/* end left sidebar search options */
-
-
-/* begin search results grid */
-table.dataGrid,
-table.resultTable
-{
-    background: white;
-    border-collapse: collapse;
-    margin:10px 0;
-}
-
-table.dataGrid
-{
-    width: 100%;
-}
-
-table.resultTable
-{
-    display: block;
-}
-
-table.dataGrid th, table.resultTable th
-{
-    font-size: 100%;
-    padding: 0.2em 0.3em;
-    vertical-align: top;
-}
-
-table.dataGrid td, table.resultTable td
-{
-    font-size: 100%;
-    border: 1px solid #ccc;
-    padding: 0.1em 0.3em;
-    vertical-align: top;
-}
-
-table.dataGrid th,
-table.resultTable th
-{
-    background-color: chocolate;
-    text-align: center;
-    color: #ffffff;
-    font-weight: bold;
-}
-table.dataGrid th a,
-table.resultTable th a
-{
-    color: #ffffff;
-    font-weight: bold;
-}
-
-table.resultTable .resultsHeading
-{
-    border: 0px;
-    padding: 12px 0 2px 0;
-    color: chocolate;
-    font-weight: bold;
-}
-
-table.resultTable th.resultsSwahili
-{
-    width: 280px;
-}
-
-table.resultTable th.resultsDeutsch
-{
-    width: 280px;
-}
-
-table.resultTable th.resultsAnmerkung,
-table.resultTable td.resultsAnmerkung
-{
-    background: white;
-    border: none;
-
-}
-
-table.dataGrid th.label,
-table.resultTable th.label
-{
-    width: 150px;
-}
-
-table.dataGrid tr.odd,
-table.resultTable tr.odd
-{
-    background-color: #dddddd;
-}
-
-.addition {
-    font-style: italic;
-}
-/* end of search results grid styles */
-
-/* --------------------------------------------------- */
-/* some individual styles */
-/* --------------------------------------------------- */
-
-table.verbs {
-    width:1000px;
-}
-
-/* --------------------------------------------------- */
-/* CJuiAutocomplete styles */
-/* --------------------------------------------------- */
-
-.ui-autocomplete {
-		max-height: 250px;
-		overflow-y: auto;
-		/* prevent horizontal scrollbar */
-		overflow-x: hidden;
-		/* add padding to account for vertical scrollbar */
-		padding-right: 20px;
-	}
-	/* IE 6 doesn't support max-height
-	 * we use height instead, but this forces the menu to always be this tall
-	 */
-	* html .ui-autocomplete {
-		height: 250px;
-	}
-
-/* --------------------------------------------------- */
-/* yii-user form styles */
-/* --------------------------------------------------- */
-
-div.row {
-    margin: 6px 0;
-}
-
-div.row label {
-    float: left;
-    width: 200px;
-    padding: 4px 10px 4px 0;
-}
-
-div.rememberMe {
-    padding: 20px 0;
-}
-
-div.rememberMe label {
-    width: 220px;
-}
-
-div.submit {
-    clear: both;
-    margin: 20px 0;
-}
-
-p.hint {
-    padding-left: 150px;
-}
-
-ul.actions {
-    list-style: none;
-    margin: 10px 0 40px 0;
-    padding: 10px 0;
-    height: 20px;
-    border-bottom: 1px solid #aaa;
-}
-
-ul.actions li {
-    float: left;
-    margin: 0 20px 0 0;
-}
-
-/* end of yii-user form styles */
-
-
-
-.actionBar
-{
-    margin: 10px;
-}
-
-div.item
-{
-    margin: 10px 0 0 0;
-    border: 1px solid silver;
-    padding: 5px;
-}
-
-
-span.noun_class a {
-    color: #FF8900;
-}
-
-div#details a span {
-    display:none;
-}
-div#details a:hover span {
-    display:block;
-    position: fixed;
-    top:80px;
-    left:630px;
-    padding:10px;
-    margin-left:20px;
-    height: 200px;
-    width: 238px;
-    color: black;
-    font-weight:normal;
-}
-span.detail_title {
-    font-size: 130%;
-    line-height: 100%;
-    font-weight:bold;
-    color:red !important;
-}
-
-.clear {
-    clear: both;
-}
-
-
-/******************************/
-/* Module Yii-User-Management */
-/******************************/
-
-div.container {
-    padding:10px;
-}
-
-ul.operations {
-    margin:0;
-}
-
-ul.operations li {
-    display: inline;
-    margin:0 10px 0 0;
-    padding: 0 10px 0 0;
-}
-
-
-
-/******************************/
-/* Tooltips with: jQuery Tools 1.2.5 http://flowplayer.org/tools/ */
-/******************************/
-.tooltip {
-	display:none;
-
-        background-color: white;
-	padding:6px;
-        height: 100px;
-	width:310px;
-	font-size:11px;
-	color:#888;
-        border:2px solid gray;
-        -moz-box-shadow: 2px 2px 11px #666;
-        -webkit-box-shadow: 2px 2px 11px #666;
-        z-index: 10;
-}
-
-/* a .label element inside tooltip */
-.tooltip .label {
-	color:yellow;
-	width:35px;
-}
-
-.tooltip a {
-	color:#ad4;
-	font-size:11px;
-	font-weight:bold;
-}
-
-
-/******************************/
-/* OLD STYLES */
-/******************************/
-
-
-
-.settings {
-    margin-bottom: 20px;
-}
-.statistics {
-    color: gray;
-}
-.message {
-    font-size:120%;
-    color: #666666;
-}
-
-
-
-
-table.yiilog {
-    clear: both;
-}
-
-
-
+/* The CSS, XHTML and design is released under GPL:http://www.opensource.org/licenses/gpl-license.php*//* Farben:braun = #E17423 (chocolate etwas heller) z.B. Titelbalkenhelleres braun = #E17E37 (chocolate noch heller)dunkleres braun = chocolate (#D2691E)rot = firebrick (#B22222)*//* --------------------------------------------------- *//* Overall page layout styles *//* --------------------------------------------------- *//* Headers */h1, .portlet-title { font-size: 166.67% }h2 { font-size: 133.33% }h3 { font-size: 116.67%; font-weight: bold }h4, h5, h6 { font-size: 100%; }h1, h2, h3, h4, h5, .portlet-title {    color: chocolate;    padding: 0.5em 0 0.1em 0;}body {    width:100%;    text-align:center;}#page {    width: 100%;}table, td, th {    padding: 2px;}#header {    padding: 0px;    background-color: #E17423;    margin-bottom: 10px;}#head_title {    /* background:  url("../images/logo.png") no-repeat 6px 2px #6A9ACD; */    text-align: left;    padding: 40px 16px 10px;    font-size: 160%;    color: #eee;    font-weight: normal;}#head_title a {    text-decoration: none;    color: #fff;    font-weight: normal;}#head_menu {    background-color: #333;    padding: 0px 10px;    text-align: right;    line-height:100%;    height: 26px;}#content{    clear:both;}#footer{    clear: both;    float:left;    background-color: transparent;    font-size: 0.8em;    text-align: center;    border-top: 1px solid #416C99;    width:100%;    padding:0}#footer div {    padding: 10px;}#footer ul, #footer ul li {    display: inline;}/******************************//* 1 Column Layout *//******************************/#one_col {    clear:both;    width:98%;    padding:6px 0;    background-color:#fff;    min-height: 300px;}/******************************//* 2 Column Layout *//* taken and adopted from Matthew James Taylor *//* (http://matthewjamestaylor.com/blog/perfect-2-column-right-menu.htm) *//******************************/#fixed {   margin:0 auto; /* to be centered */   width: 1000px;   /* in case it should be fixed width layout */   text-align:left;}/* Header styles */#header {	clear:both;	float:left;	width:100%;}/* column container */.colmask {	position:relative;	/* This fixes the IE7 overflow hidden bug */	clear:both;	float:left;	width:100%;			/* width of whole page - see #fixed above */	overflow:hidden;		/* This chops off any overhanging divs */}/* common column settings */.colleft {	float:left;	width:100%;	position:relative;        min-height: 300px;}.col1,.col2 {	float:left;	position:relative;	padding:6px 0;	overflow:hidden;        min-height:300px;}/* 2 Column (right menu) settings *//* |                          1000px                        | *//* |           740px            |         260px             | *//* | 0px |     730px     | 10px | 10px |     250px    | 0px | */.colmask {	background:#fff;		/* right column background colour */}.colmask .colleft {	/* right:25%;			 right column width */        right:260px;			/* right column width */        background:#fff;		/* left column background colour */}.colmask .col1 {	/* width:71%;			left column content width (left column width minus left and right padding) */	/* left:27%;			(right column width) plus (left column left padding) */        width:730px;			/* left column content width (left column width minus left and right padding) */	left:260px;			/* (right column width) plus (left column left padding) */}.colmask .col2 {	/* width:21%;			 right column content width (right column width minus left and right padding) */	/* left:31%;			(right column width) plus (left column left and right padding) plus (right column left padding) */        width:250px;			/* right column content width (right column width minus left and right padding) */	left:280px;			/* (right column width) plus (left column left and right padding) plus (right column left padding) */}/* --------------------------------------------------- *//* The index page with search form *//* --------------------------------------------------- */#searchPage {    float: left;    width: 100%;}#searchBlock {    float: left;    margin:0 0 10px 0;    width: 100%;    color: #555;    background-color: #ddd;    padding: 10px;}#searchBlock input {    font-size: 120%;    width: 400px;    padding: 4px;    border: 1px solid #bbb;    color: #444;    font-weight: bold;}#searchBlock input.submit {    background-color: transparent;    border: none;    width: 70px;    margin-left: 6px;    cursor: pointer;    color: gray;}#searchBlock span.detaillink {    margin-left: 100px;}#searchBlock span.detaillink a {    color: #gray;    font-weight: normal;}#searchBlock span.detaillink a:hover, #searchBlock input.submit:hover {    color: #333;    text-decoration:none;}/* begin left sidebar search options */div.adv_row {    margin: 8px 0;}div.adv_row select {    width: 180px;    border: none;}/* end left sidebar search options *//* begin search results grid */table.dataGrid,table.resultTable{    background: white;    border-collapse: collapse;    margin:10px 0;}table.dataGrid{    width: 100%;}table.resultTable{    display: block;}table.dataGrid th, table.resultTable th{    font-size: 100%;    padding: 0.2em 0.3em;    vertical-align: top;}table.dataGrid td, table.resultTable td{    font-size: 100%;    border: 1px solid #ccc;    padding: 0.1em 0.3em;    vertical-align: top;}table.dataGrid th,table.resultTable th{    background-color: chocolate;    text-align: center;    color: #ffffff;    font-weight: bold;}table.dataGrid th a,table.resultTable th a{    color: #ffffff;    font-weight: bold;}table.resultTable .resultsHeading{    border: 0px;    padding: 12px 0 2px 0;    color: chocolate;    font-weight: bold;}table.resultTable th.resultsSwahili{    width: 280px;}table.resultTable th.resultsDeutsch{    width: 280px;}table.resultTable th.resultsAnmerkung,table.resultTable td.resultsAnmerkung{    background: white;    border: none;}table.dataGrid th.label,table.resultTable th.label{    width: 150px;}table.dataGrid tr.odd,table.resultTable tr.odd{    background-color: #dddddd;}.addition {    font-style: italic;}/* end of search results grid styles *//* --------------------------------------------------- *//* some individual styles *//* --------------------------------------------------- */table.verbs {    width:1000px;}/* --------------------------------------------------- *//* CJuiAutocomplete styles *//* --------------------------------------------------- */.ui-autocomplete {		max-height: 250px;		overflow-y: auto;		/* prevent horizontal scrollbar */		overflow-x: hidden;		/* add padding to account for vertical scrollbar */		padding-right: 20px;	}	/* IE 6 doesn't support max-height	 * we use height instead, but this forces the menu to always be this tall	 */	* html .ui-autocomplete {		height: 250px;	}/* --------------------------------------------------- *//* yii-user form styles *//* --------------------------------------------------- */div.row {    margin: 6px 0;}div.row label {    float: left;    width: 200px;    padding: 4px 10px 4px 0;}div.rememberMe {    padding: 20px 0;}div.rememberMe label {    width: 220px;}div.submit {    clear: both;    margin: 20px 0;}p.hint {    padding-left: 150px;}ul.actions {    list-style: none;    margin: 10px 0 40px 0;    padding: 10px 0;    height: 20px;    border-bottom: 1px solid #aaa;}ul.actions li {    float: left;    margin: 0 20px 0 0;}/* end of yii-user form styles */.actionBar{    margin: 10px;}div.item{    margin: 10px 0 0 0;    border: 1px solid silver;    padding: 5px;}span.noun_class a {    color: #FF8900;}div#details a span {    display:none;}div#details a:hover span {    display:block;    position: fixed;    top:80px;    left:630px;    padding:10px;    margin-left:20px;    height: 200px;    width: 238px;    color: black;    font-weight:normal;}span.detail_title {    font-size: 130%;    line-height: 100%;    font-weight:bold;    color:red !important;}.clear {    clear: both;}/******************************//* Module Yii-User-Management *//******************************/div.container {    padding:10px;}ul.operations {    margin:0;}ul.operations li {    display: inline;    margin:0 10px 0 0;    padding: 0 10px 0 0;}/******************************//* Tooltips with: jQuery Tools 1.2.5 http://flowplayer.org/tools/ *//******************************/.tooltip {	display:none;        background-color: white;	padding:6px;        height: 100px;	width:310px;	font-size:11px;	color:#888;        border:2px solid gray;        -moz-box-shadow: 2px 2px 11px #666;        -webkit-box-shadow: 2px 2px 11px #666;        z-index: 10;}/* a .label element inside tooltip */.tooltip .label {	color:yellow;	width:35px;}.tooltip a {	color:#ad4;	font-size:11px;	font-weight:bold;}/******************************//* OLD STYLES *//******************************/.settings {    margin-bottom: 20px;}.statistics {    color: gray;}.message {    font-size:120%;    color: #666666;}table.yiilog {    clear: both;}

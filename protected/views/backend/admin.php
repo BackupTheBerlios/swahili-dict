@@ -185,20 +185,7 @@ $('.search-form form').submit(function(){
             ),
     ));
     ?>
-
-
-    <br /><br />
-    <?php echo CHtml::link('Erweiterte Suche ausf&uuml;hren','#',array('class'=>'search-button')); ?>
-
-    <div class="search-form" style="display:none">
-        <p>You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-            or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.</p>
-
-        <?php $this->renderPartial('_search',array(
-                'model'=>$model,
-        )); ?>
-    </div> <!-- end of search-form -->
-
+    
     <?php
     // small script to process the selected row. Add "alert(test[0]);" to the the function will display the (first) id
     Yii::app()->clientScript->registerScript("selectedRows","function select() { var test = new Array();  test=$.fn.yiiGridView.getSelection('wortschatz-grid'); };",4);

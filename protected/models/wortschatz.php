@@ -55,7 +55,7 @@ class wortschatz extends CActiveRecord {
         return array(
             array('noun_class', 'length', 'max' => 5),
             array('kiswahili, deutsch, wortart_id', 'required', 'message' => '"{attribute}" darf nicht leer sein.'),
-            array('herkunft_id, sw_grammatik_id, sw_fachgebiet_id, sw_gebrauch_id, sw_region_id, noun_animate, noun_class_singular, noun_class_plural, verb_monosyllabic, kategorie_id, grundwortschatz', 'numerical', 'integerOnly' => true),
+            array('id, herkunft_id, sw_grammatik_id, sw_fachgebiet_id, sw_gebrauch_id, sw_region_id, noun_animate, noun_class_singular, noun_class_plural, verb_monosyllabic, kategorie_id, grundwortschatz', 'numerical', 'integerOnly' => true),
             array('deutsch_addition, noun_singular_swahili, noun_plural_swahili, noun_plural_deutsch, verb_stem, verb_infinitive, kategorien, anmerkung, author, link, quelle', 'type'), //type defaults to 'string'
             array('deutsch', 'validateDublicates', 'on' => 'create, copy'),
             array('noun_class', 'exist', 'attributeName' => 'klasse_standard', 'className' => 'klassen'),

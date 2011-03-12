@@ -3,23 +3,22 @@ Yii::app()->clientScript->registerScript('focus', "
       $('#wortschatz_kiswahili').focus();
 ");
 
-Yii::app()->clientScript->registerScript('tooltips', "
-    $('.formelement').each(function(){
-		var el = $(this);
-		el.tooltip({
-                        events: {
-                          def:     'mouseenter,mouseleave',    // default show/hide events for an element
-                          input:   'focus,blur',               // for all input elements
-                          widget:  'focus,blur',  // select, checkbox, radio, button
-                          tooltip: 'mouseenter,mouseleave',     // the tooltip element
-                        },
-			position : 'center right',
-                        relative : false,
-                        offset : [0, 290],
-			tip : '#tt_'+el.attr('id')
-		});
-	});
-");
+//Yii::app()->clientScript->registerScript('tooltips', "
+//    $('.formelement').each(function(){
+//		var el = $(this);
+//		el.tooltip({
+//                        events: {
+//                          def:     'mouseenter,mouseleave',    // default show/hide events for an element
+//                          input:   'focus,blur',               // for all input elements
+//                          widget:  'focus,blur',  // select, checkbox, radio, button
+//                          tooltip: 'mouseenter,mouseleave',     // the tooltip element
+//                        },
+//			position : 'center right',
+//                        offset : [0, -90],
+//			tip : '#tt_'+el.attr('id')
+//		});
+//	});
+//");
 
 
 // JQuery Script: Which form fields should be visible after choosing "Wortart" (initially)
@@ -41,7 +40,7 @@ Yii::app()->clientScript->registerScript('initial_display', "
         $('#herkunft').show();
         }
       if ('$model->wortart_id' == '5') {
-        
+
         }
       if ('$model->wortart_id' == '6') {
 
@@ -63,7 +62,7 @@ Yii::app()->clientScript->registerScript('initial_display', "
 
 Yii::app()->clientScript->registerScript('toggle_wortart', "
   var list_wortart = $('#wortschatz_wortart_id');
-        
+
   list_wortart.change(function(e){
     if (list_wortart.val() == '1') {
       $('#substantiv').fadeIn('slow');
@@ -120,7 +119,7 @@ $('.help-link').click(function(){
 ");
 ?>
 
-<div class="yiiForm updateCreateForm">
+<div class="yiiForm">
 <p>Felder mit <span class="required">*</span> sind Pflichtfelder.</p>
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -136,10 +135,18 @@ $('.help-link').click(function(){
 
 <div id="formleft">
 <div id="wort">
+    <h1>Kiswahili</h1>
     <div class="simple">
-    <?php echo $form->labelEx($model,'kiswahili'); ?>
-    <?php echo $form->textField($model,'kiswahili',array('size'=>'30','class'=>'formelement')); ?>
+    <?php echo $form->textField($model,'kiswahili',array('size'=>'48','class'=>'formelement')); ?>
         <div class="tooltip" id="tt_wortschatz_kiswahili">Bitte <span style="color:red;font-weight: bold">hier</span> den Kiswahili-Begriff eingeben</div>
+
+       </div>
+<div class="simple">
+    <?php echo $form->dropDownList($model,'wortart_id',CHtml::listData(wortarten::model()->findAll(),'id','bezeichnung'),array('prompt'=>'Wortart wählen ...','class'=>'formelement')); ?>
+        <div class="tooltip"  id="tt_wortschatz_wortart_id">Bitte <span style="color:red;font-weight: bold">Wortart</span> auswählen</div>
+    </div>
+
+
     <a href="#" class="add_link">Zusätze</a>
     <div class="zusatz" style="display: none">
         <?php echo $form->dropDownList($model,'sw_grammatik_id',CHtml::listData(sw_grammatik::model()->findAll(),'id','kurz'), array('empty'=>'Grammatik')); ?>
@@ -147,17 +154,8 @@ $('.help-link').click(function(){
         <?php echo $form->dropDownList($model,'sw_gebrauch_id',CHtml::listData(sw_gebrauch::model()->findAll(),'id','kurz'), array('empty'=>'Gebrauch')); ?>
         <?php echo $form->dropDownList($model,'sw_region_id',CHtml::listData(sw_region::model()->findAll(),'id','bezeichnung'), array('empty'=>'Region')); ?>
     </div>
-    </div>
-    <div class="simple">
-    <?php echo $form->labelEx($model,'deutsch'); ?>
-    <?php echo $form->textField($model,'deutsch',array('size'=>'30','class'=>'formelement')); ?>
-        <div class="tooltip" id="tt_wortschatz_deutsch">Bitte <span style="color:red;font-weight: bold">hier</span> den deutschen Begriff eingeben</div>
-    </div>
-    <div class="simple">
-    <?php echo $form->labelEx($model,'wortart_id'); ?>
-    <?php echo $form->dropDownList($model,'wortart_id',CHtml::listData(wortarten::model()->findAll(),'id','bezeichnung'),array('prompt'=>'','class'=>'formelement')); ?>
-        
-    </div>
+
+
     <div class="simple" id="herkunft" style="display:none">
     <?php echo $form->labelEx($model,'herkunft_id'); ?>
     <?php echo $form->dropDownList($model,'herkunft_id',CHtml::listData(herkunft::model()->findAll(),'id','bezeichnung'),array('options'=>array('1'=>array('selected'=>true)))); ?>
@@ -214,10 +212,15 @@ $('.help-link').click(function(){
 </div> <!-- formleft -->
 
 <div id="formright">
+        <h1>Deutsch</h1>
+    <div class="simple">
+    <?php echo $form->textField($model,'deutsch',array('size'=>'48','class'=>'formelement')); ?>
+        <div class="tooltip" id="tt_wortschatz_deutsch">Bitte <span style="color:red;font-weight: bold">hier</span> den deutschen Begriff eingeben</div>
+    </div>
 <div id="wort_meta">
     <div class="simple">
     <?php echo $form->labelEx($model,'anmerkung'); ?>
-    <?php echo $form->textArea($model,'anmerkung',array('rows'=>'3','cols'=>'24')); ?>
+    <?php echo $form->textArea($model,'anmerkung',array('rows'=>'3','cols'=>'35')); ?>
     </div>
     <div class="simple">
     <?php echo $form->labelEx($model,'link'); ?>

@@ -13,7 +13,7 @@ div.yiiForm
 {
 	margin: 0;
 	padding: 5px;
-	width: 930px;
+	width: 730px;
 }
 
 div.yiiForm label.required
@@ -127,12 +127,12 @@ div.yiiForm div.complex div
 
 #formleft {
     float:left;
-    width:460px;
+    width:360px;
 }
 
 #formright {
     float:right;
-    width:460px;
+    width:360px;
 }
 
 #wort {

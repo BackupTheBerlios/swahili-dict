@@ -14,8 +14,7 @@ Yii::app()->clientScript->registerScript('tooltips', "
                           tooltip: 'mouseenter,mouseleave',     // the tooltip element
                         },
 			position : 'center right',
-                        relative : false,
-                        offset : [0, 290],
+                        offset : [0, -90],
 			tip : '#tt_'+el.attr('id')
 		});
 	});
@@ -41,7 +40,7 @@ Yii::app()->clientScript->registerScript('initial_display', "
         $('#herkunft').show();
         }
       if ('$model->wortart_id' == '5') {
-        
+
         }
       if ('$model->wortart_id' == '6') {
 
@@ -63,7 +62,7 @@ Yii::app()->clientScript->registerScript('initial_display', "
 
 Yii::app()->clientScript->registerScript('toggle_wortart', "
   var list_wortart = $('#wortschatz_wortart_id');
-        
+
   list_wortart.change(function(e){
     if (list_wortart.val() == '1') {
       $('#substantiv').fadeIn('slow');
@@ -120,7 +119,7 @@ $('.help-link').click(function(){
 ");
 ?>
 
-<div class="yiiForm updateCreateForm">
+<div class="yiiForm">
 <p>Felder mit <span class="required">*</span> sind Pflichtfelder.</p>
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -152,11 +151,12 @@ $('.help-link').click(function(){
     <?php echo $form->labelEx($model,'deutsch'); ?>
     <?php echo $form->textField($model,'deutsch',array('size'=>'30','class'=>'formelement')); ?>
         <div class="tooltip" id="tt_wortschatz_deutsch">Bitte <span style="color:red;font-weight: bold">hier</span> den deutschen Begriff eingeben</div>
+
     </div>
     <div class="simple">
     <?php echo $form->labelEx($model,'wortart_id'); ?>
     <?php echo $form->dropDownList($model,'wortart_id',CHtml::listData(wortarten::model()->findAll(),'id','bezeichnung'),array('prompt'=>'','class'=>'formelement')); ?>
-        
+        <div class="tooltip"  id="tt_wortschatz_wortart_id">Bitte <span style="color:red;font-weight: bold">Wortart</span> auswählen</div>
     </div>
     <div class="simple" id="herkunft" style="display:none">
     <?php echo $form->labelEx($model,'herkunft_id'); ?>
@@ -217,7 +217,7 @@ $('.help-link').click(function(){
 <div id="wort_meta">
     <div class="simple">
     <?php echo $form->labelEx($model,'anmerkung'); ?>
-    <?php echo $form->textArea($model,'anmerkung',array('rows'=>'3','cols'=>'24')); ?>
+    <?php echo $form->textArea($model,'anmerkung',array('rows'=>'3','cols'=>'35')); ?>
     </div>
     <div class="simple">
     <?php echo $form->labelEx($model,'link'); ?>
