@@ -124,6 +124,10 @@ div.yiiForm div.complex div
  * Additional Custom styles
  */
 
+ .updateCreateForm {
+     margin-right: 260px;
+}
+
 
 #formleft {
     float:left;
